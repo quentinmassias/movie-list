@@ -22,7 +22,9 @@ $(document).ready(function() {
                         response($.map(data['results'], function(item) {
                             return {
                                 label: item.title,
-                                value: item.id
+                                value: item.id,
+                                img: (item.poster_path != null ? "https://image.tmdb.org/t/p/w45_and_h67_bestv2" + item.poster_path : "img/default.jpg"),
+                                date: (!isNaN(new Date(item.release_date).getFullYear()) ? new Date(item.release_date).getFullYear() : "")
                             };
                         }));
                     },
@@ -31,6 +33,12 @@ $(document).ready(function() {
                     }
                 });
             }
-        });
+        }).data('ui-autocomplete')._renderItem = function(ul, item){
+            console.log(item);
+            return $("<li>")
+                .append("<div class='imageWrapper'><img src='" + item.img + "' alt='img' width='45' height='67'/></div>")
+                .append("<div class='textWrapper'><div class='textContent'><p class='title'>" + item.label + "</p><p class='date'>" + item.date + "</p></div></div>")
+                .appendTo(ul);
+        };
     });
 });

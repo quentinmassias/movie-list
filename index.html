@@ -3,14 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Movie List</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link type="text/css" href="css/jquery-ui.min.css" rel="stylesheet" />
     <link type="text/css" href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
     <div id="page">
+        <header>
 
-        <input id="searchInput" type="text" /><button>Search</button>
+            <div class="content">
+                <a href="/" class="logo">
+                    <img src="img/logo.png" alt="logo">
+                </a>
+            </div>
 
+            <section class="search_bar">
+                <div class="sub_media">
+                    <form id="search_form" action="/movie" method="get" accept-charset="utf-8">
+                        <i class="fa fa-search icon-search" aria-hidden="true"></i>
+                        <input id="searchInput" type="text" placeholder="Rechercher un film..."/>
+                    </form>
+                </div>
+            </section>
+        </header>
     </div>
 
     <script src="js/jquery-3.2.1.min.js"></script>
