@@ -1,12 +1,17 @@
+* {
+    transition: ease-in-out 0.3s;
+}
+
 html, body {
     margin: 0;
+    height: 100%;
 }
 
 header {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #16a085;
+    background-color: #c0392b;
     width: 100%;
     z-index: 999;
     display: block;
@@ -18,8 +23,13 @@ header {
 }
 
 .logo img {
-    width: 90px;
     height: 90px;
+}
+
+#page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
 }
 
 .content {
@@ -117,8 +127,8 @@ header {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-.ui-menu-item:hover .ui-menu-item-wrapper {
-    background-color: transparent;
+.ui-menu-item:hover .ui-menu-item-wrapper, .ui-menu-item:focus .ui-menu-item-wrapper {
+    background-color: transparent !important;
     border: none;
     color: #111;
 }
@@ -156,9 +166,9 @@ header {
 
 .textContent {
     position: absolute;
-    left: 0;
-    top: 150%;
-    transform: translate(0, -150%);
+    left: 20px;
+    top: 50%;
+    transform: translate(0%, -50%);
 }
 
 .textWrapper p {
@@ -180,3 +190,168 @@ header {
     font-weight: lighter;
     color: rgba(0, 0, 0, 0.5);
 }
+
+#main {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 167px;
+    background-color: #ecf0f1;
+}
+
+.movieWrapper {
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.movie {
+    width: 70vw;
+    margin: 40px auto;
+    padding: 40px 25px;
+    z-index: 0;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.moviePoster {
+    display: block;
+    position: relative;
+}
+
+.moviePoster img {
+    display: block;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.movieText {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: center;
+    box-sizing: border-box;
+    padding-left: 40px;
+}
+
+.movieTitle {
+    color: #222;
+    font-weight: bold;
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+.movieDate {
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: lighter;
+    font-size: 30px;
+    padding-left: 5px;
+}
+
+.genreRuntimeWrapper {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.overviewSpan, .runtimeSpan, .genreSpan {
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.overview {
+    text-align: justify;
+}
+
+.runtime, .genre {
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.movieMainInfo, .movieRuntime, .movieGenre {
+    margin-bottom: 20px;
+}
+
+#buttonWrapper {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pinWrapper {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 15px;
+    background-color: #34495e;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pinWrapper i {
+    padding-right: 5px;
+}
+
+.pinWrapper:hover {
+    background-color: #2ecc71;
+}
+
+#openListButton {
+    display: inline-block;
+    margin: 0 auto;
+    border: none;
+    background-color: #3498db;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 30px;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+}
+
+#openListButton:hover {
+    background-color: #2980b9;
+}
+
+#ulDialog {
+    list-style-type: none;
+    padding: 0;
+}
+
+.liDialog {
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+.liDialog:not(:last-child)::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.textTitleDialog {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #222;
+}
+
+.textDateDialog {
+    font-weight: lighter;
+    color: #333;
+}
+
